@@ -12,6 +12,7 @@ class db
 	
 	function __construct($sql)
     {
+    	//set or import your cms's config
     	$conf = new Cms;
     
 		$this->host = $conf->db['host'];
@@ -69,8 +70,8 @@ class db
 	}
 }
 
-//kompatybilność z 'mysql.so' i 'functions/db/mysql.php'
-function db_quick($sql)
+//compatybility functions
+function db_query($sql) //set your cms's function name using to query 
 {
 	return new db($sql);
 }
